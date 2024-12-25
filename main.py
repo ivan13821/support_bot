@@ -14,11 +14,11 @@ class Item(BaseModel):
     question: str
 
 
-@app.get("/gen_answer/")
+@app.get("/")
 async def root(question: Item):
 
     """ генерирует ответ на основе введеных слов """
 
     answer = search_keywords(question.question)
 
-    return {"message": answer}
+    return {"answer": answer}
